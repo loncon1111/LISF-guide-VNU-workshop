@@ -63,6 +63,7 @@ done
 Pick the offset whose ```Filesystem``` size is close to the AppImage's total size (~452 million bytes for v7.5.4). Then extract into the container's own filesystem:
 
 ```bash
+export LISF_ROOT=/root/squashfs-root
 unsquashfs -d /root/squashfs-root -o <OFFSET> /work/LISF-x86_64.AppImage
 ls /root/squashfs-root/usr/bin/    # should list LDT, LIS, LVT
 ```
@@ -99,7 +100,6 @@ apt-file search libfoo.so.N
 ```
 Or use `ldd` against the AppRun-prepared environment to see all unresolved libs at once:
 ```bash
-export LISF_ROOT=/root/squashfs-root
 # pull the exact LD_LIBRARY_PATH AppRun would set:
 LIBPATH=$(bash -c 'source <(grep -E "^(export )?LD_LIBRARY_PATH|^LISF_LIBS_" /root/squashfs-root/AppRun); echo $LD_LIBRARY_PATH')
 LD_LIBRARY_PATH="$LIBPATH" ldd /root/squashfs-root/usr/bin/LIS | grep "not found"
