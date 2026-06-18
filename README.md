@@ -22,7 +22,9 @@ mkdir LISF-x86_64
 cd LISF-x86_64
 ../LISF-x86_64.AppImage --appimage-extract
 ```
+```bash
 export LISF_ROOT=${PWD}
+```
 ### Everything is different for Mac
 
 ## Step 2 - Launch an Ubuntu container (docker)
