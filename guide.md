@@ -25,7 +25,7 @@ cd LISF-x86_64
 
 ### Everything is different for Mac
 
-## Step 2 — Launch an Ubuntu container (docker)
+## Step 2 - Launch an Ubuntu container (docker)
 
 ```bash
 cd ~/Downloads
@@ -41,7 +41,7 @@ Flag-by-flag:
 * ```--name lisf``` - names the container so you can restart it later
 ubuntu:22.04 - glibc 2.35, comfortably above LISF's 2.22 floor
 
-## Step 3 — Extract the AppImage payload (could be run on regular Ubuntu also if LISF_x86_64.AppImage extracted fail)
+## Step 3 - Extract the AppImage payload (could be run on regular Ubuntu also if LISF_x86_64.AppImage extracted fail)
 
 Need to be run on **root**
 
@@ -66,7 +66,7 @@ ls /root/squashfs-root/usr/bin/    # should list LDT, LIS, LVT
 ```
 **Ex:** 
 
-## Step 4 — Install dependencies
+## Step 4 - Install dependencies
 If you don't encounter problems like
 ```bash
  error while loading shared libraries: libxxx.xx.x: cannot open shared object file: No such file or directory
