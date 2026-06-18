@@ -69,7 +69,7 @@ ls /root/squashfs-root/usr/bin/    # should list LDT, LIS, LVT
 ```
 **Ex:** 
 
-## Step 4 - Install dependencies
+## Step 4 - Install dependencies (can happen at regular Ubuntu virtual too)
 If you don't encounter problems like
 ```bash
  error while loading shared libraries: libxxx.xx.x: cannot open shared object file: No such file or directory
