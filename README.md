@@ -22,7 +22,7 @@ mkdir LISF-x86_64
 cd LISF-x86_64
 ../LISF-x86_64.AppImage --appimage-extract
 ```
-
+export LISF_ROOT=${PWD}
 ### Everything is different for Mac
 
 ## Step 2 - Launch an Ubuntu container (docker)
@@ -113,7 +113,7 @@ then rename ```libtiff.so.6``` with ```libtiff.so.5```
 ```bash
 cd /usr/lib/x86_64-linux-gnu/
 ln -fs ./libtiff.so.6 ./libtiff.so.5
-cd /root/squashfs-root
+cd $LISF_ROOT
 ```
 ***NOTE 2: Specify libmpifort.so.12***
 Install MPICH
@@ -127,7 +127,7 @@ cd /usr/lib/x86_64-linux-gnu/
 ln -fs ./libmpichfort.so.12 ./libmpifort.so.12
 ln -fs ./libmpichxx.so.12 ./libmpixx.so.12
 ln -fs ./libmpichcc.so.12 ./libmpicc.so.12
-cd /root/squashfs-root
+cd $LISF_ROOT
 ```
 
 ## Step 5 - Run the smoke tests
