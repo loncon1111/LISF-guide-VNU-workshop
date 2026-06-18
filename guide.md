@@ -111,8 +111,8 @@ apt-get install -y libtiff6
 ```
 then rename ```libtiff.so.6``` with ```libtiff.so.5```
 ```bash
-cd /usr/lib/x86_64/
-ln -fs libtiff.so.6 libtiff.so.5
+cd /usr/lib/x86_64-linux-gnu/
+ln -fs ./libtiff.so.6 ./libtiff.so.5
 cd /root/squashfs-root
 ```
 ***NOTE 2: Specify libmpifort.so.12***
@@ -121,6 +121,14 @@ Install MPICH
 apt-get install -y mpich
 ```
 Ubuntu 22.04 ships MPICH 4.0, which keeps the same libmpi*.so.12 SONAMEs as 3.4 and is ABI-compatible for the interfaces ESMF uses, so this works without rebuilding anything.
+If you are still not that lucky (Ubuntu version is too new), then we shall make a symlink to rename 
+```bash
+cd /usr/lib/x86_64-linux-gnu/
+ln -fs ./libmpichfort.so.12 ./libmpifort.so.12
+ln -fs ./libmpichxx.so.12 ./libmpixx.so.12
+ln -fs ./libmpichcc.so.12 ./libmpicc.so.12
+cd /root/squashfs-root
+```
 
 ## Step 5 - Run the smoke tests
 
