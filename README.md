@@ -46,6 +46,9 @@ ubuntu:22.04 - glibc 2.35, comfortably above LISF's 2.22 floor
 ## Step 3 - Extract the AppImage payload (could be run on regular Ubuntu also if LISF_x86_64.AppImage extracted fail)
 
 Need to be run on **root**
+```bash
+sudo apt-get update
+```
 
 ```bash
 # Inside the container
